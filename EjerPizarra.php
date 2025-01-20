@@ -9,65 +9,183 @@
 
 <?php
 
-class Tarea {
-    protected $titulo;
-    protected $descripcion;
-    protected $fecha;
+class Animal {
+    protected $nombre;
+    protected $edad;
+    protected $vacunado;
 
 
-    public function __construct($titulo = "No title", $descripcion = "No text", $fecha = "No date") {
-        $this->titulo = $titulo;
-        $this->descripcion = $descripcion;
-        $this->fecha = $fecha;
+    public function __construct($nombre = "No name", $edad = "No age", $vacunado = "Not vacuned") {
+        $this->nombre = $nombre;
+        $this->edad = $edad;
+        $this->vacunado = $vacunado;
     }
 
-    
-    public function getTitulo()
-    {
-        return $this->titulo;
+
+    // Manifestar
+    public function Manifestar() {
     }
 
-    public function setTitulo($titulo)
-    {
-        $this->titulo = $titulo;
-
-        return $this;
+    // Desplazar
+    public function Desplazar() {
     }
 
-    public function getDescripcion()
-    {
-        return $this->descripcion;
+    // Vacunar
+    public function Vacunar() {
+        $this->vacunado = "Vacuned";
     }
 
-    public function setDescripcion($descripcion)
+    /**
+     * Get the value of nombre
+     */ 
+    public function getNombre()
     {
-        $this->descripcion = $descripcion;
-
-        return $this;
-    }
- 
-    public function getFecha()
-    {
-        return $this->fecha;
+        return $this->nombre;
     }
 
-    public function setFecha($fecha)
+    /**
+     * Set the value of nombre
+     *
+     *
+     */ 
+    public function setNombre($nombre)
     {
-        $this->fecha = $fecha;
+        $this->nombre = $nombre;
 
-        return $this;
+
+    }
+
+        /**
+         * Get the value of edad
+         */ 
+        public function getEdad()
+        {
+                return $this->edad;
+        }
+
+        /**
+         * Set the value of edad
+         *
+         * 
+         */ 
+        public function setEdad($edad)
+        {
+                $this->edad = $edad;
+
+
+        }
+
+    /**
+     * Get the value of vacunado
+     */ 
+    public function getVacunado()
+    {
+        return $this->vacunado;
+    }
+
+    /**
+     * Set the value of vacunado
+     *
+     * 
+     */ 
+    public function setVacunado($vacunado)
+    {
+        $this->vacunado = $vacunado;
+
     }
 }
 
+class Perro extends Animal{
+    protected $raza;
 
-//Creamos una tarea
-$tarea = new Tarea("BBDDEj3", "En esta entraga hareis 398389289892389233 ejercicios By Thomás", "20-1-25");
+    public function __construct($nombre, $edad, $vacunado, $raza = "Común" ) {
+        parent::__construct($nombre, $edad, $vacunado);
+        $this->raza = $raza;}
 
-var_dump($tarea);
-$tarea->setTitulo("BBDDInfierno");
-var_dump($tarea);
+    // Manifestar
+    public function Manifestar() {
+        echo "El perro se manifiesta.";
+    }
+
+    // Desplazar
+    public function Desplazar() {
+        echo "El perro se desplaza."; 
+    }
+
+        /**
+     * Get the value of raza
+     */ 
+    public function getRaza()
+    {
+        return $this->raza;
+    }
+
+    /**
+     * Set the value of raza
+     *
+     * 
+     */ 
+    public function setRaza($raza)
+    {
+        $this->raza = $raza;
+
+
+    }
+}
+
+class Gaviota extends Animal{
+    protected $plumaje;
+
+    public function __construct($nombre, $edad, $vacunado, $plumaje = "Sin plumas" ) {
+        parent::__construct($nombre, $edad, $vacunado);
+        $this->plumaje = $plumaje;}
+
+    // Manifestar
+    public function Manifestar() {
+        echo "La gaviota se manifiesta.";
+    }
+
+    // Desplazar
+    public function Desplazar() {
+        echo "La gaviota se desplaza."; 
+    }
+
+    /**
+     * Get the value of plumaje
+     */ 
+    public function getPlumaje()
+    {
+        return $this->plumaje;
+    }
+
+    /**
+     * Set the value of plumaje
+     *
+     * 
+     */ 
+    public function setPlumaje($plumaje)
+    {
+        $this->plumaje = $plumaje;
+
+    }
+}
+
+//Perro 
+$perro = new Perro("Thor",8,"Vacunado","Pastor Alemán");
+$perro->Manifestar();
+$perro->Desplazar();
+$perro->Vacunar();
+$vacunado = $perro->getVacunado();
+echo "El perro esta $vacunado";
+echo "<br>";
+
+//Gaviota 
+$gaviota = new Gaviota("Pajaro",3,"Vacunado","Plumitas de colores");
+$gaviota->Manifestar();
+$gaviota->Desplazar();
 
 ?>
 
 </body>
 </html>
+
