@@ -1,7 +1,7 @@
 
 <?php
 
-require_once("./Producto.php");
+require_once("Producto.php");
 
 class Pfresco extends Producto{
 

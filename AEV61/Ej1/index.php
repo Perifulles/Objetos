@@ -8,9 +8,9 @@
 <body>
 
 <?php
-require_once("class/Caire.php");
+require_once("./class/Caire.php");
 
-$CongeAire = new Caire(60);
+$CongeAire = new Caire(60,);
 
 
 ?>
