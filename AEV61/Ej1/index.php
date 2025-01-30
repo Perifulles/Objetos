@@ -8,12 +8,16 @@
 <body>
 
 <?php
+require_once("./class/Producto.php");
 require_once("./class/Pfresco.php");
 require_once("./class/Prefrigerado.php");
 require_once("./class/Pcongelado.php");
 require_once("./class/Caire.php");
 require_once("./class/Cagua.php");
 require_once("./class/Cnitrogeno.php");
+
+$dorito = new Cnitrogeno("20-2-2");
+var_dump($dorito);
 
 
 $pescado = new Cnitrogeno("20-3-2024", "Afganistán", -5, "Por filtración", 20);
