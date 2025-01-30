@@ -6,9 +6,9 @@ require_once("Pcongelado.php");
 class Caire extends Pcongelado{
     protected $porcaire;
 
-    public function __construct($porcaire = 0)
+    public function __construct($fembasado, $porigen, $trecomendada, $porcaire = 0)
     {
-        parent::__construct();
+        parent::__construct($fembasado, $porigen, $trecomendada);
         $this->porcaire = $porcaire;
     }
 
