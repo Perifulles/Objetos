@@ -33,22 +33,31 @@
     
 <br><br>
 <h1>Lector de libros</h1>
-<h2>Que libro/revista quieres visualizar ?</h2>
+<h2>Que quieres visualizar ?</h2>
+
 <form action="index.php" method="post">
-    Numero articulo<input type="number" name="numlec" min=0></input><br>
-    Libro<input type="radio" name="eleccion" value="libro"><br>
-    Revista<input type="radio" name="eleccion" value="revista"><br>
+    Libros<input type="radio" name="eleccion" value="libro" checked><br>
+    Revistas<input type="radio" name="eleccion" value="revista"><br>
     <input type="hidden" name="subs" value="leer"></input>
-    <input type="submit" name="submit"></input><br>
+    <input type="submit" name="submit" value="Mostrar"></input><br>
 </form>
+
 </body>
 </html>
 
 <?php
 #Creamos objetos para hacer las pruevas
 require_once("class/Manager.php");
-$Miguel = new Manager('./info.json', 'libro');
+$Miguel = new Manager('./libros.json', 'libro');
 $Miguel->Create();
+
+$DavidME = new Manager('./revistas.json', 'revista');
+$DavidME->Create();
+
+$lector = new Manager();
+$lector->Read();
+$lector->Delete();
+
 
 
 /*

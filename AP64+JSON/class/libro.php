@@ -22,12 +22,13 @@ class libro extends publicaciones{
         return [
             'title' => $this->titulo,
             'author' => $this->autor,
-            'year' => $this->ano
+            'year' => $this->ano,
+            'npag' => $this->numpag
         ];
     }
 
     public static function fromArray(array $data){
-        return new libro($data['title'], $data['author'], $data['year']);
+        return new libro($data['title'], $data['author'], $data['year'], $data['npag']);
     }
 }
 

@@ -19,8 +19,18 @@ class revista extends publicaciones{
         <b>Tipo: </b> <span style="background-color:rgb(243, 247, 21); color: black;">Revista</span>';
     }
 
+    public function toArray(){
+        return [
+            'title' => $this->titulo,
+            'author' => $this->autor,
+            'year' => $this->ano,
+            'team' => $this->tematica
+        ];
+    }
 
-    
+    public static function fromArray(array $data){
+        return new revista($data['title'], $data['author'], $data['year'], $data['team']);
+    }
 }
 
 
